@@ -1,7 +1,9 @@
-# [Hub官方release](https://github.com/mislav/hub/releases)
+# 1. Hub:[Hub release](https://github.com/mislav/hub/releases)
 # npm i -g @antfu/ni 
 # npm i -g @antfu/nr
 # npm i live-server -g
+# npm i diff-so-fancy -g
+# 2. gh - https://cli.github.com/
 # ~./bashrc
 # 详细目录请使用 Antfu/tools/antfu-eslint-cmd
 
@@ -11,6 +13,9 @@ eval $(ssh-agent)
     ssh-add ~/.ssh/id_rsa
     ssh-add ~/.ssh/gitee
     ssh-add ~/.ssh/github
+
+echo ""    
+echo " Darling:use 'i02shelp' to show shortcuts"
 
 # this is windows bashrc
 
@@ -84,10 +89,6 @@ alias gsha='git rev-parse HEAD | pbcopy'
 
 alias ghci='gh run list -L 1'
 
-rd(){
-  source ~/.bashrc
-}
-
 glp() {
   git --no-pager log -$1
 }
@@ -122,64 +123,52 @@ i02shelp(){
   echo "Shortcuts:                                  Sample:"
   echo "i      -- go to i dir (customizable)              : i" 
   echo "dir    -- create a new directory and cd into it   : dir my-dir"
-  echo "clonei -- clone to i dir and cd into it           : clonei yourepo [my-dir]"
+  echo "codei  -- go to i dir makes a file and code it    : codei a.md"
+  echo "clone  -- clone <Repo-URL> to current dir [-dir]  : clone yourepo.git [my-dir]"
+  echo "clonei -- clone to i/dir and cd into it           : clonei yourepo [my-dir]"
+  echo "cloner -- clone to r/dir and cd into it           : cloner yourepo [my-dir]"
+  echo "clonef -- clone to f/dir and cd into it           : clonef yourepo [my-dir]"
   echo "repros -- go to repros dir                        : repros my-repo [user/repo]"
-  echo "forks  -- go to forks dir                         : forks my-repo     "
+  echo "forks  -- go to forks dir (base current repo)     : forks my-repo     "
   echo "pr     -- checkout a pr                           : pr #123"
-  echo "codei  -- go to i dir makes a file and code .     : codei a.md"
   echo "serve  -- serve dist folder                       : serve index.js"
+  echo "------"
+  echo "Git Custom Aliases:                         Sample:"
+  echo ""
+  echo "glp    -- show near log message                   :glp 5"
+  echo "gd     --- show diff [-branch]                    :gd master"
+  echo "gdc    --- show diff-cached [-branch]             :gdc master"
   echo "------"
   echo "Project Aliases:"
   echo ""
-  echo " nio    : ni --prefer-offline"
-  echo " s      : nr start"
-  echo " d      : nr dev"
-  echo " b      : nr build"
-  echo " bw     : nr build --watch"
-  echo " t      : nr test"
-  echo " tu     : nr test -u"
-  echo " tw     : nr test --watch"
-  echo " w      : nr watch"
-  echo " p      : nr play"
-  echo " c      : nr typecheck"
-  echo " lint   : nr lint"
-  echo " lintf  : nr lint --fix"
-  echo " release: nr release"
+  echo " nio    : ni --prefer-offline       s      : nr start"
+  echo " d      : nr dev                    b      : nr build"
+  echo " bw     : nr build --watch          t      : nr test"
+  echo " tu     : nr test -u                tw     : nr test --watch"
+  echo " w      : nr watch                  p      : nr play"
+  echo " c      : nr typecheck              lint   : nr lint"
+  echo " lintf  : nr lint --fix             release: nr release"
   echo " re     : nr release"
-
+  echo "------"
   echo "Git Aliases:"
-  echo ' gs  : git status '
-  echo ' gp  : git push '
-  echo ' gpf : git push --force '
-  echo ' gpft: git push --follow-tags '
-  echo ' gpl : git pull --rebase '
-  echo ' gcl : git clone '
-  echo ' gst : git stash '
-  echo ' grm : git rm '
-  echo ' gmv : git mv '
-  echo ' main: git checkout main '
-  echo ' gco : git checkout '
-  echo ' gcob: git checkout -b '
-  echo ' gb  : git branch '
-  echo ' gbd : git branch -d '
-  echo ' grb : git rebase '
-  echo ' grbom: git rebase origin/master '
-  echo ' grbc: git rebase --continue '
-  echo ' gl  : git log '
-  echo ' glo : git log --oneline --graph '
-  echo ' grh : git reset HEAD '
-  echo ' grh1: git reset HEAD~1 '
-  echo ' ga  : git add '
-  echo ' gA  : git add -A '
-  echo ' gc  : git commit '
-  echo ' gcm : git commit -m '
-  echo ' gca : git commit -a '
-  echo ' gcam: git add -A && git commit -m '
-  echo ' gfrb: git fetch origin && git rebase origin/master '
-  echo ' gxn : git clean -dn '
-  echo ' gx  : git clean -df '
-  echo ' gsha: git rev-parse HEAD | pbcopy '
-  echo ' ghci: gh run list -L 1 '
+  echo ' gs  : git status                     gp  : git push '
+  echo ' gpf : git push --force               gpft: git push --follow-tags '
+  echo ' gpl : git pull --rebase              gcl : git clone '
+  echo ' gst : git stash                      grm : git rm '
+  echo ' gmv : git mv                         main: git checkout main '
+  echo ' gco : git checkout                   gcob: git checkout -b '
+  echo ' gb  : git branch                     gbd : git branch -d '
+  echo ' grb : git rebase                     grbom: git rebase origin/master '
+  echo ' grbc: git rebase --continue          gl  : git log '
+  echo ' glo : git log --oneline --graph      grh : git reset HEAD '
+  echo ' grh1: git reset HEAD~1               ga  : git add '
+  echo ' gA  : git add -A                     gc  : git commit '
+  echo ' gcm : git commit -m                  gca : git commit -a '
+  echo ' gcam: git add -A && git commit -m    gfrb: git fetch origin && git rebase origin/master '
+  echo ' gxn : git clean -dn                  gx  : git clean -df '
+  echo ' gsha: git rev-parse HEAD | pbcopy    ghci: gh run list -L 1 '
+
+  
 
 }
 
